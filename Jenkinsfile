@@ -27,6 +27,10 @@ pipeline {
         }
         stage('Trigger-Deploy-Job') {
             steps {
+                timeout(time: 60, unit: 'SECONDS') {
+                    input 'Do you want to deploy in Development?'
+                }
+
                 build 'deploy-to-dev'
             }
         }
