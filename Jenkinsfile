@@ -9,10 +9,10 @@ pipeline {
         stage('Docker Build-Tag-Push') {
             steps {
                 sh '''
-                    docker build -t samplewebapp:${BUILD_NUMBER} .
-                    docker tag samplewebapp:${BUILD_NUMBER} samplewebapp:latest
-                    docker push samplewebapp:${BUILD_NUMBER}
-                    docker push samplewebapp:latest
+                    docker build -t devopstechlab/samplewebapp:${BUILD_NUMBER} .
+                    docker tag devopstechlab/samplewebapp:${BUILD_NUMBER} samplewebapp:latest
+                    docker push devopstechlab/samplewebapp:${BUILD_NUMBER}
+                    docker push devopstechlab/samplewebapp:latest
                 '''
             }
         }
