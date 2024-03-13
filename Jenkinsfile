@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh '''
                     docker build -t devopstechlab/samplewebapp:${BUILD_NUMBER} .
-                    docker tag devopstechlab/samplewebapp:${BUILD_NUMBER} samplewebapp:latest
+                    docker tag devopstechlab/samplewebapp:${BUILD_NUMBER} devopstechlab/samplewebapp:latest
                     docker push devopstechlab/samplewebapp:${BUILD_NUMBER}
                     docker push devopstechlab/samplewebapp:latest
                 '''
