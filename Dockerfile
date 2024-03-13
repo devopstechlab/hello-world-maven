@@ -23,7 +23,7 @@ FROM tomcat:9.0.56-jdk17-openjdk-slim
 WORKDIR /usr/local/tomcat/webapps
 
 # Copy the built WAR file from the Maven builder stage to the Tomcat webapps directory
-COPY --from=builder webapp/target/*.war .
+COPY --from=builder /app/webapp/target/*.war .
 
 # Expose the default Tomcat port
 EXPOSE 8080
