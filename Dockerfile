@@ -5,10 +5,10 @@ FROM maven:3.8.4-openjdk-17 AS builder
 WORKDIR /app
 
 # Copy the pom.xml file to the container
-COPY pom.xml .
+#COPY pom.xml .
 
 # Download Maven dependencies specified in pom.xml
-RUN mvn dependency:go-offline -B
+#RUN mvn dependency:go-offline -B
 
 # Copy the entire project to the container
 COPY . .
